@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-shoadow-1{
+    text-shadow: 1px 1px 0 #4a90e2, -1px 1px 0 #4a90e2, -1px -1px 0 #4a90e2, 1px -1px 0 #4a90e2;
+}
+.text-shoadow-2{
+    text-shadow: 1px 1px 0 #50e3c2, -1px 1px 0 #50e3c2, -1px -1px 0 #50e3c2, 1px -1px 0 #50e3c2;
+}
+.text-shoadow-3{
+    text-shadow: 1px 1px 0 #e35050, -1px 1px 0 #e35050, -1px -1px 0 #e35050, 1px -1px 0 #e35050;
+}
