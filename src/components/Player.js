@@ -107,16 +107,26 @@ const Player = ({setisShowRight}) => {
     setCurSeconds(Math.round(percent * songInfo.duration / 100));
   };
   
-  const handleNextSong = () =>{
-    if(songs){
-        let currentSongIndex
-        songs?.forEach((item,index) => {
-          if(item.encodeId === curSongId) currentSongIndex = index          
-        })
-        dispatch(actions.setCurSongId(songs[currentSongIndex + 1].encodeId))
-        dispatch(actions.play(true))
+ const handleNextSong = () => {
+    if (songs) {
+      if (isshuffe) {
+        const randomIndex = Math.round(Math.random()* songs?.length) - 1
+        dispatch(actions.setCurSongId(songs[randomIndex].encodeId))
+      } else {
+        let currentSongIndex;
+        songs?.forEach((item, index) => {
+          if (item.encodeId === curSongId) currentSongIndex = index;
+        });
+  
+        if (currentSongIndex === songs.length - 1) {
+          dispatch(actions.setCurSongId(songs[0].encodeId));
+        } else {
+          dispatch(actions.setCurSongId(songs[currentSongIndex + 1].encodeId));
+        }
+      }
+      dispatch(actions.play(true));
     }
-  }
+  };
   const handleBackSong = () =>{
     if(songs){
         let currentSongIndex
